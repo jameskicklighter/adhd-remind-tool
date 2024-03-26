@@ -69,7 +69,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'adhd_reminder.wsgi.application'
-
+AUTH_USER_MODEL = 'reminder.User'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
