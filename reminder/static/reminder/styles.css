@@ -1,0 +1,8 @@
+.page-body {
+    max-width: 800px;
+}
+
+#priority {
+    flex-grow: 0;
+    width: 105px!important;
+}

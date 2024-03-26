@@ -7,16 +7,39 @@
     <p class="lead">For all poor souls afflicted with the terrible plight of ADHD, this is where you come to suffer slightly less, perhaps...</p>
     <!-- <p>This is now your <a href="https://www.youtube.com/watch?v=3YxaaGgTQYM">anthem</a></p> -->
 </div>
-<div>
-    <!-- temporary list -->
-    <label for="tasks">Choose a task:</label>
+    
+<form action="" id="new-task">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="title" class="form-label">Task name</label>
+        <div class="input-group">
+            <input type="text" id="title" class="form-control" aria-label="Task title" maxlength="64">
+            <select class="form-select" id="priority" aria-label="Task priority">
+                <option selected>Priority</option>
+                <option value="HIGH">!!!</option>
+                <option value="MID">!!</option>
+                <option value="LOW">!</option>
+            </select>
+        </div>
+  </div>
+  <div class="mb-3">
+    <label for="note" class="form-label">Notes (Optional)</label>
+    <textarea class="form-control" id="note" maxlength="256" rows="3"></textarea>
+  </div>
 
-    <select name="tasks" id="tasks">
-        <option value="clean room">Clean room.</option>
-        <option value="clean kitchen">Clean kitchen.</option>
-        <option value="clean bathroom">Clean bathroom.</option>
-        <option value="wash clothes">Wash clothes.</option>
-    </select>
-</div>
+  <button class="btn btn-primary mb-3" type="submit">Add to my to-dos!</button>
+</form>
+
+<label class="mb-3" for="dropdown-div">Or alternatively, choose a task:</label>
+<div class="dropdown" id="dropdown-div">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Some tasks
+    </button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Clean room.</a></li>
+      <li><a class="dropdown-item" href="#">Clean kitchen.</a></li>
+      <li><a class="dropdown-item" href="#">Clean bathroom.</a></li>
+    </ul>
+  </div>
 
 {% endblock %}
